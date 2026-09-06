@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>personal DashBoard</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="A personal productivity dashboard with tasks, notes, weather, and Pomodoro timer.">
+    <meta name="author" content="Khalil">
+    <meta name="keywords" content="Dashboard, JavaScript, Productivity, Tasks, Weather, Notes">
+    <link rel="stylesheet" href="project-3.css">
+    <link rel="stylesheet" href="all.css">
+    <link rel="stylesheet" href="all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+
+
+    <div class="nav">
+        <i id="optionsIcon" class="fa-solid fa-bars" style="font-size: 30px"></i>
+        <input type="text" name="" id="" placeholder="Search....">
+        <div class="theEnd">
+            <i id="person" class="fa-solid fa-circle-user" style="color: rgb(79, 70, 229);font-size: 30px"></i>
+            <i id="bell" class="fa-regular fa-bell" style="color:black;font-size: 25px"></i>
+            <i id="question" class="fa-solid fa-question" style="color: rgb(79, 70, 229);font-size: 30px"></i>
+
+        </div>
+    </div>
+    <div class="sideBar">
+        <div class="logoBar"><i class="fa-solid fa-graduation-cap" style="color:rgb(99, 102, 241);font-size: 45px; margin-right: 10px;"></i> MY DASHBOARD</div>
+        <div class="options">
+            <p> <i class="fa-regular fa-house" style="color: rgb(79, 70, 229);font-size: 30px"></i>Dashboard</p>
+            <p> <i class="fa-solid fa-list-check" style="color: rgb(79, 70, 229);font-size: 30px"></i>Tasks</p>
+            <p> <i class="fa-solid fa-note-sticky" style="color: rgb(79, 70, 229);font-size: 30px"></i>Notes</p>
+            <p> <i class="fa-regular fa-alarm-clock" style="color: rgb(79, 70, 229);font-size: 30px"></i>Timer</p>
+            <p> <i class="fa-regular fa-cloud" style="color: rgb(79, 70, 229);font-size: 30px"></i>Weather</p>
+            <p> <i class="fa-solid fa-calculator" style="color: rgb(79, 70, 229);font-size: 30px"></i>Calc</p>
+            <p><i class="fa-solid fa-gear" style="color: rgb(79, 70, 229);font-size: 30px"></i> Settings</p>
+        </div>
+        <button class="mode"><img src="bedtime_16dp_EFEFEF_FILL0_wght600_GRAD0_opsz20 (1).png" alt="">Dark Mode</button>
+        <span></span>
+        <div class="profile">
+            <i class="fa-solid fa-circle-user" style="color: rgb(79, 70, 229);font-size: 45px"></i>
+            <p>khalil Fransic</p>
+        </div>
+    </div>
+    <div class="main">
+        <div class="maincontainer">
+            <div class="container">
+                <div class="clock"><i class="fa-regular fa-clock" style="font-size: 75px; color: #4F46E5;padding-left:20px ;"></i>
+                    <span id="time">00:00:00 </span>
+                </div>
+                <div class="sayHi">
+                    <h1>text,Khalil</h1>
+                </div>
+            </div>
+
+            <div class="second">
+                <div class="card">
+                    <h3>Todo List</h3>
+                    <div class="container1">
+                        <input id="title" placeholder="Title" />
+                        <input id="title1" type="text" placeholder="Details">
+                        <button class="add" onclick="add()">Add</button>
+                    </div>
+                    <ul id="list"></ul>
+                </div>
+                <div class="tasks">
+                    <h3>task progress</h3>
+                    <span class="progress"></span>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn" style="display: none;">UP</button>
+    </div>
+
+
+    <script src="project-3.js"></script>
+</body>
+
+</html>
