@@ -47,6 +47,10 @@ body {
     /* background-color: #1B2142; */
 }
 
+.sideBar.active {
+    display: none;
+}
+
 .nav.light-theme {
     background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
     box-shadow: 0 2px 10px rgba(0, 0, 0, .25);
@@ -65,11 +69,12 @@ body {
     transition: 0.3s;
 }
 
-.options p {
+.options button {
     padding: 15px;
     border: solid 4px transparent;
     border-radius: 5px;
     transition: all 0.3s ease;
+    background-color: transparent;
 }
 
 .options {
@@ -81,7 +86,7 @@ body {
 }
 
 .options i {
-    padding-right: 4px;
+    padding-right: 20px;
 }
 
 .profile {
@@ -116,7 +121,7 @@ body {
     margin-bottom: 7px;
 }
 
-.options p:hover {
+.options button:hover {
     background: rgba(91, 92, 230, .12);
     color: #5b5ce6;
     transform: translateX(5px);
