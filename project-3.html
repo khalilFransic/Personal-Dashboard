@@ -23,21 +23,21 @@
             <i id="person" class="fa-solid fa-circle-user" style="color: rgb(79, 70, 229);font-size: 30px"></i>
             <i id="bell" class="fa-regular fa-bell" style="color:black;font-size: 25px"></i>
             <i id="question" class="fa-solid fa-question" style="color: rgb(79, 70, 229);font-size: 30px"></i>
-
         </div>
     </div>
+
     <div class="sideBar">
         <div class="logoBar"><i class="fa-solid fa-graduation-cap" style="color:rgb(99, 102, 241);font-size: 45px; margin-right: 10px;"></i> MY DASHBOARD</div>
         <div class="options">
-            <button data-page="Dashboard"> <i class="fa-regular fa-house" style="color: rgb(79, 70, 229);font-size: 30px"></i>Dashboard</button>
+            <button data-page="Dashboard"> <i class="fa-regular fa-house" style="color: rgb(79, 70, 229);font-size: 30px;border : 0;"></i>Dashboard</button>
             <button data-page="Tasks">
-                <i class="fa-solid fa-list-check" style="color: rgb(79, 70, 229);font-size: 30px"></i> Tasks
+                <i class="fa-solid fa-list-check" style="color: rgb(79, 70, 229);font-size: 30px;border : 0"></i> Tasks
             </button>
-            <button> <i class="fa-solid fa-note-sticky " style="color: rgb(79, 70, 229);font-size: 30px "></i>Notes</button>
-            <button> <i class="fa-regular fa-alarm-clock " style="color: rgb(79, 70, 229);font-size: 30px "></i>Timer</button>
-            <button> <i class="fa-regular fa-cloud " style="color: rgb(79, 70, 229);font-size: 30px "></i>Weather</button>
-            <button> <i class="fa-solid fa-calculator " style="color: rgb(79, 70, 229);font-size: 30px "></i>Calc</button>
-            <button><i class="fa-solid fa-gear " style="color: rgb(79, 70, 229);font-size: 30px "></i> Settings</button>
+            <button data-page="Notes"> <i class="fa-solid fa-note-sticky " style="color: rgb(79, 70, 229);font-size: 30px ;border : 0"></i>Notes</button>
+            <button data-page="Timer"> <i class="fa-regular fa-alarm-clock " style="color: rgb(79, 70, 229);font-size: 30px;border : 0 " ></i>Timer</button>
+            <button data-page="Weather"> <i class="fa-regular fa-cloud " style="color: rgb(79, 70, 229);font-size: 30px;border : 0 "></i>Weather</button>
+            <button data-page="calc"> <i class="fa-solid fa-calculator " style="color: rgb(79, 70, 229);font-size: 30px ;border : 0"></i>Calc</button>
+            <button data-page="Settings"><i class="fa-solid fa-gear " style="color: rgb(79, 70, 229);font-size: 30px ;border : 0"></i> Settings</button>
         </div>
         <button class="mode "><img src="bedtime_16dp_EFEFEF_FILL0_wght600_GRAD0_opsz20 (1).png " alt=" ">Dark Mode</button>
         <span></span>
@@ -46,7 +46,27 @@
             <p>khalil Fransic</p>
         </div>
     </div>
-    <main id="content"></main>
+
+    <main id="content">
+        <div class="welcome">
+            <p>Welcome</p>
+            <button onclick="profile()">get start -></button>
+        </div>
+        <div class="create-profile">
+            <p>LOGE IN</p>
+            <i class="fa-solid fa-circle-user" style="color:purple;font-size: 50px ;border : 0;text-align: center;  padding-bottom:30px ;"></i>
+            <label for="user">User Name</label>
+            <input type="text" name="user name" id="user" data-status="empty">
+            <p class="error" id="user" ></p >
+            <label for="email">Email</label>
+            <input type="text" name="" id="email" data-status="false">
+            <p class="error" id="email"></p >
+            <label for="password">Password</label>
+            <input type="text" name="" id="password" data-status="false">
+            <p class="error" id="password"></p >
+            <button onclick="check()">DONE</button>
+        </div>
+    </main>
 
 
 
