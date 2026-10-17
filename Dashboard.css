@@ -1,0 +1,116 @@
+ :root{
+--title-color:#1e1b6e;
+--para-color:#8a8db5;
+--card-color:#ffff;
+ }
+ .advice-Bar{
+    padding: 20px;
+    background-image: url(ChatGPT\ Image\ Sep\ 30\,\ 2026\,\ 05_02_26\ PM.png);
+     background-size: cover;
+   background-position: right center;
+    border-radius: 15px;
+    min-height: 115px;
+    
+}
+.advice-Bar h2{
+    font-size: 1.7rem;
+    padding-bottom: 10px;
+    font-weight:600;
+    color: #000082;
+}
+.advice-Bar p{
+    font-size: 1.3rem;
+    opacity: 50%;
+}
+.main{
+    padding: 10px 30px;
+    }
+.info-bar{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 20px;
+    
+    
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    font-size: 1.2rem;
+    
+}
+.info h4{
+    font-size: 1.0rem;
+    color: var(--title-color);
+}
+.info p:first-of-type{
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--title-color);
+}
+.info p:last-of-type{
+    color: var(--para-color);
+}
+.card{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--card-color);
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 10px;
+    flex: 1;
+    gap: 30px;
+    max-width: 350px;
+}
+.card button{
+    margin-left: auto;
+    border: 0;
+    background-color: var(--card-color);
+    font-size: 1.2rem;
+    color:var(--title-color);
+    font-weight: 700;
+    cursor: pointer;
+}
+.icon-wrapper{
+    width:80px;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #ece6ff;
+}
+.middle-row{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap:15px;
+}
+.side-column{
+    background-color: aqua;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    gap:15px
+}
+.title{
+    display: flex;
+    flex-direction: row;
+}
+.add-tasks{
+    display: flex;
+    flex-direction: row;
+}
+.add-tasks input{
+    display: none;
+}
+
+.add-tasks.active input{
+    display: block;
+}
+.add-tasks.active p{
+    display:none;
+}

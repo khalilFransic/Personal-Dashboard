@@ -1,21 +1,32 @@
 
-
 const content = document.getElementById("content");
 const buttons = document.querySelectorAll(".options button");
 const optionshide = document.getElementById("optionsIcon");
 const sideBar = document.querySelector(".sideBar");
 const profilee = document.querySelector(".create-profile");
 const welcome = document.querySelector(".welcome");
+const body=document.querySelector("body");
  let check1=true;
 
 
 
 
-function loadpages(page) {
-    fetch(`${page}.html`).then(Response => Response.text()).then(data => { content.innerHTML = data; }).catch(error => {
+async function loadpages(page) {
+    try {
+        const res = await fetch(`${page}.html`);
+        content.innerHTML = await res.text();
+    } catch (error) {
         content.innerHTML = "<h1>Page not found</h1>";
         console.log(error);
-    })
+        return;
+    }
+
+    try {
+        const module = await import(`./${page}.js`);
+        module.init?.();
+    } catch (error) {
+        console.log(`No JS for ${page}`, error);
+    }
 }
 buttons.forEach(button => {
     button.addEventListener("click", () => {
@@ -26,15 +37,16 @@ buttons.forEach(button => {
     });
 });
 
-optionshide.addEventListener("click", () => {
-    sideBar.classList.toggle("active");
-    if (sideBar.className.includes("active")) {
-        document.body.style.gridTemplateColumns = "250px 1fr ";
-        document.body.style.gridTemplateRows = "80px 1fr"
-    } else {
-        document.body.style.gridTemplateColumns = "0 1fr ";
-    }
-});
+    optionshide.addEventListener("click", () => {
+        body.classList.toggle("sidebar-open");
+       
+        // if (sideBar.className.includes("active")) {
+        //     document.body.style.gridTemplateColumns = "250px 1fr ";
+        //     document.body.style.gridTemplateRows = "80px 1fr"
+        // } else {
+        //     document.body.style.gridTemplateColumns = "0 1fr ";
+        // }
+    });
 
 function profile() {
     profilee.classList.add("active");
@@ -71,4 +83,22 @@ function clear_error_message(input){
    if(!para.classList.contains("error")){
     para.textContent="";
    }
+}
+
+function initDashboard() {
+    const title = document.querySelector(".advice-Bar h2");
+    const dateText = document.querySelector(".advice-Bar p");
+    if (!title) return;
+
+    const hour = new Date().getHours();
+    let greeting;
+    if (hour < 12) {
+        greeting = "Good Morning";
+    } else if (hour < 18) {
+        greeting = "Good Afternoon";
+    } else {
+        greeting = "Good evening";
+    }
+    title.textContent = `${greeting}, khalil`;
+ 
 }

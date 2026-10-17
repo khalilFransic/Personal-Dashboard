@@ -9,7 +9,7 @@ body {
     grid-template-rows: 80px 1fr;
     height: 100vh;
     font-family: "Poppins", sans-serif;
-    height: 100vh;
+     transition: grid-template-columns 0.3s ease;
 }
 
 #content {
@@ -60,7 +60,7 @@ body {
 
 .sideBar {
     flex-direction: column;
-    padding: 20px;
+    padding: 0px;
     font-size: 20px;
     background: linear-gradient( to bottom, #F0FAFD, #CBEFF7);
     color: black;
@@ -72,8 +72,12 @@ body {
     position: sticky;
     top: 0;
     overflow: hidden;
-    display: none;
+    display: flex;
+    min-width: 0;
+    white-space: nowrap;
+    
 }
+
 
 .sideBar.light-theme {
     background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
@@ -82,8 +86,14 @@ body {
     /* background-color: #1B2142; */
 }
 
-.sideBar.active {
-    display: flex;
+
+body.sidebar-open {
+    grid-Template-Columns : 250px 1fr ;
+    grid-template-rows : 80px 1fr;
+    
+}
+body.sidebar-open .sideBar {
+    padding: 1.25rem;
 }
 
 .nav.light-theme {
