@@ -87,11 +87,15 @@
 }
 .middle-row{
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    align-items: flex-start;
+    /*   بخلي ينفصلوا عن بعض معاد يكبروا سوا   */
+    grid-template-columns: 1.5fr 1fr;
     gap:15px;
+    margin-top: 20px;
+    padding-left: 60px;
 }
 .side-column{
-    background-color: aqua;
+    /* background-color: aqua; */
     display: grid;
     grid-template-rows: 2fr 1fr;
     gap:15px
@@ -99,18 +103,83 @@
 .title{
     display: flex;
     flex-direction: row;
+    gap:10px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #000082;
 }
 .add-tasks{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
-.add-tasks input{
+.add-tasks .tasks-input{
     display: none;
 }
 
 .add-tasks.active input{
     display: block;
 }
-.add-tasks.active p{
+.add-tasks.active .task-note{
     display:none;
 }
+.task-column{
+
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+.add{
+    padding: 4px 15px;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    background-color: #1e1b6e;
+    color: aliceblue;   
+}
+.task-note{
+    color: #1e1b6e;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.tasks{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+}
+.tasks input{
+    display: block;
+    width: 15px;
+}
+.tasks label{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    font-size: 1.2rem;
+}
+.tasks-input{
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid var(--para-color);
+    font-size: 1.2rem;
+}
+.task-column{
+    max-width: 900px;
+    max-height: 300px;
+    
+    
+}
+

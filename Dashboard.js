@@ -25,7 +25,8 @@ export function init(){
     Date:document.querySelector(".advice-Bar p"),
     Add:document.querySelector(".add"),
     AddRow:document.querySelector(".add-tasks"),
-    InputV:document.querySelector(".tasks  label input")
+    InputV:document.querySelector(".tasks-input"),
+    TaskS:document.querySelector(".tasks")
 
 }
     Elements.welcome.textContent=`${getgreeting()}, Khalil`;
@@ -34,31 +35,32 @@ export function init(){
 
     function addTheTasks() {
     Elements.Add.addEventListener("click", () => {
-        if (Elements.Add.textContent == "+") {
+        if (Elements.Add.textContent == "+ add Tasks") {
             Elements.AddRow.classList.add("active");
             Elements.Add.textContent = "Done";
             Elements.InputV.focus();
         }
-        else if (Elements.Add.textContent === "Done" && Elements.InputV.value.trim() !== "") {
+        else if (Elements.Add.textContent === "Done" && Elements.InputV.value.trim()!=="") {
             getTheValue();
-            
             Elements.AddRow.classList.remove("active");
-            Elements.Add.textContent = "+";
-            Elements.InputV.value = "";
+            Elements.Add.textContent = "+ add Tasks";
+             Elements.InputV.value = "";
         }
     });
 }
 
 function getTheValue() {
     let inputValue = Elements.InputV.value;
+    console.log(inputValue)
+    console.log(Elements.InputV)
     const pText = document.createElement("p");
     pText.textContent = inputValue;
     const label = document.createElement("label");
     const checkbox = document.createElement("input");
     checkbox.setAttribute("type", "checkbox");
     label.appendChild(checkbox);
-    label.appendChild(pText); 
-    Elements.AddRow.appendChild(label); 
+    label.appendChild(pText);
+    Elements.TaskS.appendChild(label); 
 }
 
 addTheTasks();
